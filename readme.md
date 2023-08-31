@@ -5,7 +5,7 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <div align="center">
-  <a href="https://laurezammit.github.io/Pokedex-Tkinter/">
+  <a href="https://laurezammit.github.io/Booki-php/">
     <img src="/booki/img/Booki.png" alt="Logo Booki" width="180">
   </a>
 </div>
@@ -78,6 +78,7 @@ Votre mission est de faire en sorte de :
 
 ## Construction
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="30" alt="vscode logo"  />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" height="30" alt="php logo"  />
 
 ## Auteure
 Laure Zammit
