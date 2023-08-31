@@ -38,11 +38,17 @@ Créez un module de connexion simple qui permet aux utilisateurs de se connecter
 #### Objectifs
 
 [x] Créer un formulaire de connexion avec des champs pour le nom d'utilisateur et le mot de passe.
+
 [ ] Valider les informations soumises par l'utilisateur.
+
 [x] Utiliser un tableau associatif pour stocker les informations de connexion (simulées ici).
+
 [x] Rediriger l'utilisateur vers la page de bienvenue en cas de succès.
+
 [x] la connexion doit être stocké dans une session ou un cookie
+
 [ ] La page bienvenue n’est pas accessible si l’utilisateur n’est pas connecté.
+
 [ ] Afficher un message d'erreur en cas d'échec.
 
 ### Refactoriser Booki
@@ -56,14 +62,19 @@ Dans ce projet, la base vous est fournie, à savoir :
 Le style est déjà créé et n’est donc pas à refaire.
 
 Votre mission est de faire en sorte de :
-- Créer un header a afficher sur les différentes pages
-- Créer un footer à afficher sur les différentes pages
-- Créer un tableau pour les hébergements à Marseille
-- Créer un tableau pour les activités a Marseille
-- Créer un tableau pour les plus populaires
-En utilisant PHP, vous devrez appeler le header et le footer sur les différentes pages. Vous utiliserez PHP pour appeler les activités, les hébergements et les plus populaires sur la page d’accueil.
+[x] Créer un header a afficher sur les différentes pages
 
-Avec PHP, vous allez appeler les différentes informations sur les pages de détails de chacune des vignettes. Attention, vous ne devez pas dupliquer les pages de détails pour chaque vignette.
+[x] Créer un footer à afficher sur les différentes pages
+
+[x] Créer un tableau pour les hébergements à Marseille
+
+[x] Créer un tableau pour les activités a Marseille
+
+[x] Créer un tableau pour les plus populaires
+
+[x] En utilisant PHP, vous devrez appeler le header et le footer sur les différentes pages. Vous utiliserez PHP pour appeler les activités, les hébergements et les plus populaires sur la page d’accueil.
+
+[x] Avec PHP, vous allez appeler les différentes informations sur les pages de détails de chacune des vignettes. Attention, vous ne devez pas dupliquer les pages de détails pour chaque vignette.
 
 ## Construction
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="30" alt="vscode logo"  />
