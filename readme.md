@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://laurezammit.github.io/Pokedex-Tkinter/">
-    <img src="img/Booki.png" alt="Logo Booki" width="180">
+    <img src="/booki/img/Booki.png" alt="Logo Booki" width="180">
   </a>
 </div>
 
