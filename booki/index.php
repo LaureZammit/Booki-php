@@ -1,11 +1,9 @@
-<!-- $_Session permettant de savoir si connecté ou pas -->
 <?php
-    session_start();
-    
-    if (isset($_SESSION['msg_erreur'])) {
-        echo $_SESSION['msg_erreur'];
-        unset($_SESSION['msg_erreur']);
-    }
+// Tableau d'identifiants et de mot de passe de connexion
+include_once 'identifiants.php';
+
+// $_Session permettant de savoir si connecté ou pas
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -27,33 +25,41 @@
     <main>
         <!-- Si l'utilisateur s'est connecté et vient de la page bienvenue il doit s'afficher Utilisateur : $username -->
         <?php 
-            if (isset($_SESSION['username'])) { ?>
-                <h1>Utilisateur : <?=$_SESSION['username'];?></h1>
-                <form method="post" action="index.php">
-                    <input type="submit" value="Déconnexion">
+
+            if (isset($_SESSION['error'])) {
+                echo $_SESSION['error'];
+                unset($_SESSION['error']);
+            }
+            if (empty($_SESSION['nomUser']) && empty($_SESSION['nomUser'])) {
+                $_SESSION['nomUser'] = "m";
+                $_SESSION['password'] = "m";
+            }
+
+            foreach ($identifiants as $identifiant) {
+                if ($_SESSION['nomUser'] == $identifiant['nomUser'] && $_SESSION['password'] == $identifiant['password']) {
+        ?>
+
+            <div>
+                <p>Utilisateur : <?=$_SESSION['nomUser'];?></p>
+                <form method="post" action="deco.php">
+                    <button>Deconnexion</button>
                 </form>
-            <?php } else { ?>
-                <form id="connexion" method ="post" action="bienvenue.php">
-                    <label for="nomUser">Nom d'utilisateur :</label>
-                    <input type="text" name="nomUser">
+            </div>
 
-                    <label for="password">Mot de passe :</label>
-                    <input type="password" name="password">
+            <?php break; } else { ?>
 
-                    <input type="submit" value="Se connecter">
-                </form>
-            <?php };?>
+            <form id="connexion" method ="post" action="bienvenue.php">
+                <label for="nomUser">Nom d'utilisateur :</label>
+                <input type="text" name="nomUser">
 
-        <!-- Créer le module de connexion : Nom utilisateur / mot de passe avec du php -->
-        <!-- <form id="connexion" method ="post" action="bienvenue.php">
-            <label for="nomUser">Nom d'utilisateur :</label>
-            <input type="text" name="nomUser">
+                <label for="password">Mot de passe :</label>
+                <input type="password" name="password">
 
-            <label for="password">Mot de passe :</label>
-            <input type="password" name="password">
+                <input type="submit" value="Se connecter">
+            </form>
 
-            <input type="submit" value="Se connecter">
-        </form> -->
+            <?php break; }; 
+            };?>
 
         <section id="findhebergement">
             <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
