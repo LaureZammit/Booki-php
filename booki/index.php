@@ -25,8 +25,27 @@
     </header>
 
     <main>
+        <!-- Si l'utilisateur s'est connecté et vient de la page bienvenue il doit s'afficher Utilisateur : $username -->
+        <?php 
+            if (isset($_SESSION['username'])) { ?>
+                <h1>Utilisateur : <?=$_SESSION['username'];?></h1>
+                <form method="post" action="index.php">
+                    <input type="submit" value="Déconnexion">
+                </form>
+            <?php } else { ?>
+                <form id="connexion" method ="post" action="bienvenue.php">
+                    <label for="nomUser">Nom d'utilisateur :</label>
+                    <input type="text" name="nomUser">
+
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" name="password">
+
+                    <input type="submit" value="Se connecter">
+                </form>
+            <?php };?>
+
         <!-- Créer le module de connexion : Nom utilisateur / mot de passe avec du php -->
-        <form id="connexion" method ="post" action="bienvenue.php">
+        <!-- <form id="connexion" method ="post" action="bienvenue.php">
             <label for="nomUser">Nom d'utilisateur :</label>
             <input type="text" name="nomUser">
 
@@ -34,7 +53,7 @@
             <input type="password" name="password">
 
             <input type="submit" value="Se connecter">
-        </form>
+        </form> -->
 
         <section id="findhebergement">
             <h1>Trouvez votre hébergement pour des vacances de rêve</h1>

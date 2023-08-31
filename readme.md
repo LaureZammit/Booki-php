@@ -39,7 +39,7 @@ Créez un module de connexion simple qui permet aux utilisateurs de se connecter
 
 [x] Créer un formulaire de connexion avec des champs pour le nom d'utilisateur et le mot de passe.
 
-[ ] Valider les informations soumises par l'utilisateur.
+[x] Valider les informations soumises par l'utilisateur.
 
 [x] Utiliser un tableau associatif pour stocker les informations de connexion (simulées ici).
 
@@ -47,9 +47,9 @@ Créez un module de connexion simple qui permet aux utilisateurs de se connecter
 
 [x] la connexion doit être stocké dans une session ou un cookie
 
-[ ] La page bienvenue n’est pas accessible si l’utilisateur n’est pas connecté.
+[x] La page bienvenue n’est pas accessible si l’utilisateur n’est pas connecté.
 
-[ ] Afficher un message d'erreur en cas d'échec.
+[x] Afficher un message d'erreur en cas d'échec.
 
 ### Refactoriser Booki
 

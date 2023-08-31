@@ -2,15 +2,15 @@
 // Session permettant de savoir si connecté ou pas
 session_start();
 
-$_SESSION['nomUser'] = $_POST['nomUser'];
-$_SESSION['password'] = $_POST['password'];
+// $_SESSION['nomUser'] = $_POST['nomUser'];
+// $_SESSION['password'] = $_POST['password'];
 
 // Tableau d'identifiants et de mot de passe de connexion
 $identifiants = [
-    [
-    'nomUser' => 'admin',
-    'password' => 'user'
-    ],
+    // [
+    // 'nomUser' => 'admin',
+    // 'password' => 'user'
+    // ],
     [
     'nomUser' => 'Laure',
     'password' => 'laure'
@@ -41,16 +41,15 @@ $identifiants = [
                     foreach ($identifiants as $identifiant) {
                         if ($_POST['nomUser'] === $identifiant['nomUser'] && $_POST['password'] === $identifiant['password']) {
                             echo '<h1>Bienvenue ' . $identifiant['nomUser'] . '</h1>';
-                            // header('Location: bienvenue.php');
                             ?>
                             <form method="post" action="index.php">
                                 <input type="submit" value="Déconnexion">
                             </form>
+                        <?php } else {
+                            header('Location: index.php');
+                            };?>
                         <?php };
-                    };
-                } else {
-                    session_destroy();
-                    header('Location: index.php');
+                    
                 };
 
                 if(isset($_POST['deconnexion'])) {
@@ -61,7 +60,7 @@ $identifiants = [
         </section>
 
         <section id="findhebergement">
-            <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+            <h2>Trouvez votre hébergement pour des vacances de rêve</h2>
             <p>En plein centre ville ou en pleine nature</p>
 
             <form action="POST">
