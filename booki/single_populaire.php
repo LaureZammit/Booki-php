@@ -1,3 +1,11 @@
+<?php
+// Tableau d'identifiants et de mot de passe de connexion
+include_once 'identifiants.php';
+
+// $_Session permettant de savoir si connecté ou pas
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,15 +22,32 @@
     <header>
         <?php include 'header.php'; ?>
     </header>
+
     <main>
-       <section id="detailvignettes">
-        <img src="img/hotelduport.jpg" alt="alt image ici">
-        <article>
-            <h1>Titre hébergement ou activité</h1>
-            <p class="prixhebergement">le prix est ...</p>
-            <p class="description">mettre la description/lorem ici</p>
-        </article>
-       </section>
+        <?php include 'tab-populaire.php'; ?>
+        <?php 
+            // Définir la variable $_GET
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+            } else {
+                $id = 0;
+            }
+            foreach ($populaires as $populaire) { 
+                if ($populaire['id'] == $id) {
+
+        ?>
+            <section id="detailvignettes">
+                <img src="<?=$populaire['image'];?>" alt="<?=$populaire['alt'];?>">
+                <article>
+                    <h1><?=$populaire['nom'];?></h1>
+                    <p class="prixhebergement"><?=$populaire['prix'];?></p>
+                    <p class="description"><?=$populaire['alt'];?></p>
+                </article>
+                
+            </section>
+            <?php break;
+                }
+            };?>
     </main>
 
     <footer>

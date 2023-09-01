@@ -15,7 +15,6 @@ session_start();
     <title>Booki</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/2bb90c57b5.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
     <header>
@@ -89,13 +88,12 @@ session_start();
         <section id="hebergementAndPopulaire">
             <div id="hebergements">
                 <h2>Hébergement à Marseille</h2>
-
                 <div>
-                    <?php include 'tableaux.php'; ?>
+                    <?php include 'tab-hebergement.php'; ?>
                     <?php
                         foreach ($hebergements as $hebergement) { ?>
                         <article>
-                                <a href="#">
+                                <a href="single_hebergement.php?id=<?=$hebergement['id'];?>">
                                     <img src="<?=$hebergement['image'];?>" alt="<?=$hebergement['alt'];?>">
                                     <div class="infozone">
                                         <h3><?=$hebergement['nom'];?></h3>
@@ -114,7 +112,6 @@ session_start();
                 </div>
                 <a href="#">Afficher plus</a>
             </div>
-
             <aside>
                 <div>
                     <h2>Les plus populaires</h2>
@@ -122,11 +119,11 @@ session_start();
                 </div>
 
                 <div id="aside_card">
-                    <?php include 'tableaux.php'; ?>
+                    <?php include 'tab-populaire.php'; ?>
                     <?php foreach ($populaires as $populaire) { ?>
 
                     <article>
-                        <a href="#">
+                        <a href="single_populaire.php?id=<?=$populaire['id'];?>">
                             <img src="<?=$populaire['image'];?>" alt="<?=$populaire['alt'];?>">
 
                             <div class="infozone">
@@ -152,9 +149,9 @@ session_start();
         <section id="activites">
             <h2>Activités à Marseille</h2>
             <div>
-                <?php include 'tableaux.php'; ?>
+                <?php include 'tab-activite.php'; ?>
                 <?php foreach ($activites as $activite) { ?>
-                    <a href="#">
+                    <a href="single_activite.php?id=<?=$activite['id'];?>">
                         <figure>
                             <img src="<?=$activite['image'];?>" alt="<?=$activite['alt'];?>">
                             <figcaption>

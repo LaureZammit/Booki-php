@@ -14,15 +14,32 @@
     <header>
         <?php include 'header.php'; ?>
     </header>
+    
     <main>
-       <section id="detailvignettes">
-        <img src="img/hotelduport.jpg" alt="alt image ici">
-        <article>
-            <h1>Titre hébergement ou activité</h1>
-            <p class="prixhebergement">le prix est ...</p>
-            <p class="description">mettre la description/lorem ici</p>
-        </article>
-       </section>
+        <?php include 'tab-hebergement.php'; ?>
+        <?php 
+            // Définir la variable $_GET
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+            } else {
+                $id = 0;
+            }
+            foreach ($hebergements as $hebergement) { 
+                if ($hebergement['id'] == $id) {
+
+        ?>
+            <section id="detailvignettes">
+                <img src="<?=$hebergement['image'];?>" alt="<?=$hebergement['alt'];?>">
+                <article>
+                    <h1><?=$hebergement['nom'];?></h1>
+                    <p class="prixhebergement"><?=$hebergement['prix'];?></p>
+                    <p class="description"><?=$hebergement['alt'];?></p>
+                </article>
+                
+            </section>
+            <?php break;
+                }
+            };?>
     </main>
 
     <footer>

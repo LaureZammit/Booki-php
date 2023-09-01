@@ -1,3 +1,11 @@
+<?php
+// Tableau d'identifiants et de mot de passe de connexion
+include_once 'identifiants.php';
+
+// $_Session permettant de savoir si connecté ou pas
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,17 +22,33 @@
     <header>
         <?php include 'header.php'; ?>
     </header>
-    <main>
-       <section id="detailvignettes">
-        <img src="img/hotelduport.jpg" alt="alt image ici">
-        <article>
-            <h1>Titre hébergement ou activité</h1>
-            <p class="prixhebergement">le prix est ...</p>
-            <p class="description">mettre la description/lorem ici</p>
-        </article>
-       </section>
-    </main>
 
+    <main>
+        <?php include 'tab-activite.php'; ?>
+        <?php 
+            // Définir la variable $_GET
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+            } else {
+                $id = 0;
+            }
+            foreach ($activites as $activite) { 
+                if ($activite['id'] == $id) {
+
+        ?>
+            <section id="detailvignettes">
+                <img src="<?=$activite['image'];?>" alt="<?=$activite['alt'];?>">
+                <article>
+                    <h1><?=$activite['nom'];?></h1>
+                    <p class="prixhebergement"><?=$activite['prix'];?></p>
+                    <p class="description"><?=$activite['alt'];?></p>
+                </article>
+                
+            </section>
+            <?php break;
+                }
+            };?>
+    </main>
     <footer>
         <?php include 'footer.php'; ?>
     </footer>

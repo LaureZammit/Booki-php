@@ -51,6 +51,8 @@ Créez un module de connexion simple qui permet aux utilisateurs de se connecter
 
 [x] Afficher un message d'erreur en cas d'échec.
 
+[x] Ajouter un bouton de déconnexion sur la page de bienvenue.
+
 ### Refactoriser Booki
 
 Dans ce projet, la base vous est fournie, à savoir :
